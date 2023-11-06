@@ -18,18 +18,18 @@ public class Home_Page {
 
 
         JButton chatbotButton = new JButton("Εξυπηρέτηση Πελατών");     //Φτιάχνει κουμπί με όνομα "Εξυπηρέτηση Πελατών"
-        JButton flightBookingButton = new JButton("Κράτηση Εισιτηρίων Πτήσης");     //Φτιάχνει κουμπί με όνομα "Κράτηση Εισιτηρίων Πτήσης"
+        JButton checkButton = new JButton("Check In");     //Φτιάχνει κουμπί με όνομα "Check In"
         
         chatbotButton.setBounds(100, 100, 350, 200);    //Προσδιορίζει το μέγεθος του κουμπιου
-        flightBookingButton.setBounds(100, 100, 350, 200);  //Προσδιορίζει το μέγεθος του κουμπιου
+        checkButton.setBounds(100, 100, 350, 200);  //Προσδιορίζει το μέγεθος του κουμπιου
         chatbotButton.setBorder(BorderFactory.createEtchedBorder());
-        flightBookingButton.setBorder(BorderFactory.createEtchedBorder());
+        checkButton.setBorder(BorderFactory.createEtchedBorder());
         
         
         ImageIcon chatIcon = new ImageIcon("C:/Users/first/Pictures/chatbot.jpg");  //Αυτο το path θα πρεπει να αλλάξει ώστε η εικόνα να βρίσκεται στον κοινό φάκελο με το project
         chatbotButton.setIcon(chatIcon);    //Βάζει φωτογραφία δίπλα από το κάθε κουμπι
         ImageIcon bookIcon = new ImageIcon("C:/Users/first/Pictures/Plane.png");    //Αυτο το path θα πρεπει να αλλάξει ώστε η εικόνα να βρίσκεται στον κοινό φάκελο με το project
-        flightBookingButton.setIcon(bookIcon);  //Βάζει φωτογραφία δίπλα από το κάθε κουμπι
+        checkButton.setIcon(bookIcon);  //Βάζει φωτογραφία δίπλα από το κάθε κουμπι
 
         chatbotButton.addActionListener(new ActionListener() {
             @Override
@@ -37,15 +37,15 @@ public class Home_Page {
                 openChatbotWindow();   //Ανοίγει το παραθυρο που ευθύνεται για το chatbot 
             }
         });
-        flightBookingButton.addActionListener(new ActionListener() {
+        checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                openFlightBookingWindow();   //Ανοίγει το παράθυρο που ευθύνεται για τις κρατήσεις
+                opencheckWindow();   //Ανοίγει το παράθυρο που ευθύνεται για τις κρατήσεις
             }
         });
         
         mainFrame.add(chatbotButton);       //Προσθέτει το chatbotButton στο frame
-        mainFrame.add(flightBookingButton);     //Προσθέτει το flightBookingButton στο frame
+        mainFrame.add(checkButton);     //Προσθέτει το checkButton στο frame
         mainFrame.setVisible(true);     //Εμφανίζει τα componets στο παραθυρο
     }
 
