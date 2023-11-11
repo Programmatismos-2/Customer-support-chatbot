@@ -44,11 +44,24 @@ public class Home_Page {
             }
         });
         
+
         mainFrame.add(chatbotButton);       //Προσθέτει το chatbotButton στο frame
         mainFrame.add(checkButton);     //Προσθέτει το checkButton στο frame
         mainFrame.setVisible(true);     //Εμφανίζει τα componets στο παραθυρο
     }
-
+    
+    private static void openChatbotWindow() {
+        JFrame chatbotFrame = new JFrame("Εξυπηρέτηση Πελατών - Chatbot");
+        chatbotFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);     // Κλείστε αυτό το παράθυρο όταν κλείσετε το chatbot
+        chatbotFrame.setSize(600, 400);
+        chatbotFrame.setVisible(true);  //Κάνει ορατό το νέο παράθυρο
+    }
+    private static void opencheckWindow() {
+        JFrame checkFrame = new JFrame("Check-In");
+        checkFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   // Κλείστε αυτό το παράθυρο όταν κλείσετε την επιλογή κρατήσεων
+        checkFrame.setSize(600, 400);
+        checkFrame.setVisible(true);    //Κάνει ορατό το νέο παράθυρο
+    }
 
 
 }
