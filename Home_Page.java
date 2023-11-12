@@ -31,7 +31,8 @@ public class Home_Page {
         checkButton.setBounds(450, 265, 200, 50);  //Προσδιορίζει το μέγεθος του κουμπιου
         chatbotButton.setBorder(BorderFactory.createEtchedBorder());
         checkButton.setBorder(BorderFactory.createEtchedBorder());
-        
+        checkButton.setFocusable(true);
+        chatbotButton.setFocusable(false);
         
         /*ImageIcon chatIcon = new ImageIcon("C:/Users/first/Pictures/chatbot.jpg");  //Αυτο το path θα πρεπει να αλλάξει ώστε η εικόνα να βρίσκεται στον κοινό φάκελο με το project
         chatbotButton.setIcon(chatIcon);    //Βάζει φωτογραφία δίπλα από το κάθε κουμπι
@@ -61,9 +62,8 @@ public class Home_Page {
             }
         });
         
-
-        mainFrame.add(chatbotButton);       //Προσθέτει το chatbotButton στο frame
         mainFrame.add(checkButton);     //Προσθέτει το checkButton στο frame
+        mainFrame.add(chatbotButton);       //Προσθέτει το chatbotButton στο frame
         mainFrame.setVisible(true);     //Εμφανίζει τα componets στο παραθυρο
     }
     
