@@ -5,7 +5,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class ChatBotPage {
-    public void openChatbotWindow() {
+    Mediator med1 = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
+    public String openChatbotWindow() {
         JFrame chatbotFrame = new JFrame("Εξυπηρέτηση Πελατών - Chatbot");
         chatbotFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);     // Κλείστε αυτό το παράθυρο όταν κλείσετε το chatbot
         chatbotFrame.setSize(600, 400);
@@ -36,10 +37,16 @@ public class ChatBotPage {
         submit1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*Mediator med1 = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
-                med1.dataInput(surnameF2.getText(), flightF2.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
+                /*
+                boolean continue = med1.dataInput(surnameF2.getText(), flightF2.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
+                if (continue) {
+                    return surnameF2.getText();
+                } else {
+                    System.out.println("User not found. Please try again");
+                    return "";
+                }
                 */
-                chatbotFrame.setVisible(false);
+                chatbotFrame.dispose();
             }
         });
     }

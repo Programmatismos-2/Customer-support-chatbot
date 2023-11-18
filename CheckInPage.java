@@ -1,4 +1,7 @@
+import javax.swing.JFrame;
+
 public class CheckInPage {
+    Mediator med = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
     public void opencheckWindow() {
         JFrame checkFrame = new JFrame("Check-In");
         checkFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   // Κλείστε αυτό το παράθυρο όταν κλείσετε την επιλογή κρατήσεων
@@ -45,10 +48,10 @@ public class CheckInPage {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*Mediator med = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
+                /*
                 med.dataInput(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
                 */
-                checkFrame.setVisible(false);
+                checkFrame.dispose();
             }
         });
     }
