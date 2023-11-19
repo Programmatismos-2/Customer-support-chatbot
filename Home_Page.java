@@ -12,11 +12,11 @@ public class Home_Page extends JFrame {
     JButton checkButton;
 
     public Home_Page() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Κλεινει το παραθυρο οταν καποιος παταει το x
-        this.setSize(800, 530);    //Καθορίζει το μέγεθος του παραθυρου 
-        this.setLayout(null);      //Προσδιορίζει το είδος του layout που εχει το frame
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Κλεινει το παραθυρο οταν καποιος παταει το x
+        setSize(800, 530);    //Καθορίζει το μέγεθος του παραθυρου 
+        setLayout(null);      //Προσδιορίζει το είδος του layout που εχει το frame
         
-        this.setIconImage(logo.getImage());    //Θέτει την εικονα με το παραπανω path σαν logo του παραθύρου
+        setIconImage(logo.getImage());    //Θέτει την εικονα με το παραπανω path σαν logo του παραθύρου
         ImageIcon homePic = new ImageIcon("C:/Users/first/Pictures/HomePlane1.jpg");    //Αυτο το path θα πρεπει να αλλάξει ώστε η εικόνα να βρίσκεται στον κοινό φάκελο με το project
         JLabel lab1 = new JLabel(homePic);  //Εισάγω την φωτογραφία background σαν JLabel
         lab1.setSize(800, 530); //Ορίζω το μέγεθος του label ίδιο με του frame
@@ -39,7 +39,12 @@ public class Home_Page extends JFrame {
                     this.dispose();
                     new Home_Page();
                 } else {
-                    Chatbot app = new Chatbot();
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            new Chatbot().setVisible(true);;
+                        }
+                    });
                 }
             }
         });

@@ -8,21 +8,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Chatbot extends JFrame {
-    private JTextArea chatArea;
-    private JTextField inputField;
-    private List<String> conversation;
+    JTextArea chatArea;
+    JTextField input;
+    List<String> conversation;
 
     public Chatbot() {
         setTitle("Chatbot App");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
+        setVisible(true);
+        setIconImage(logo.getImage());
 
         chatArea = new JTextArea(15, 20);
         chatArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(chatArea);
 
-        inputField = new JTextField(20);
-        inputField.addActionListener(new ActionListener() {
+        input = new JTextField(20);
+        input.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 processUserInput();
@@ -41,13 +43,13 @@ public class Chatbot extends JFrame {
 
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BorderLayout());
-        inputPanel.add(inputField, BorderLayout.CENTER);
+        inputPanel.add(input, BorderLayout.CENTER);
         inputPanel.add(okButton, BorderLayout.EAST);
 
         add(scrollPane, BorderLayout.CENTER);
         add(inputPanel, BorderLayout.SOUTH);
 
-        inputField.addKeyListener(new KeyListener() {
+        input.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
             }
@@ -55,12 +57,15 @@ public class Chatbot extends JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    processUserInput();
+                    input.setEditable(false);
                 }
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    input.setEditable(true);
+                }
             }
         });
 
@@ -68,7 +73,7 @@ public class Chatbot extends JFrame {
     }
 
     private void processUserInput() {
-        String userMessage = inputField.getText();
+        String userMessage = input.getText();
         conversation.add("You: " + userMessage);
         updateChatArea();
 
@@ -78,7 +83,7 @@ public class Chatbot extends JFrame {
         conversation.add(botResponse);
         updateChatArea();
 
-        inputField.setText("");
+        input.setText("");
     }
 
     private void updateChatArea() {
