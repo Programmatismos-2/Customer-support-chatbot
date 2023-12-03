@@ -1,3 +1,4 @@
+package project.src.main.java.com.freddo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
