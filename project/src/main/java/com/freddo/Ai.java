@@ -11,11 +11,11 @@ public class Ai {
 static HttpClient client = HttpClient.newHttpClient();
  
 public static String hey() throws IOException, InterruptedException {
-    String a = GiveFileToAI.fileToVariable(" ποιοι ειναι οι κανονισμοι για εγκειμονουσεσ ");
+    String file = GiveFileToAI.fileToVariable(" ποιοι ειναι οι κανονισμοι για εγκειμονουσεσ ");
 String requestBody = "{\n" +
 " \"instances\": [\n" +
 " {\n" +
-"\"content\": \"" + a + " \",\n" +
+"\"content\": \"" + file + " \",\n" +
 " \"output\": \"\"\n" +
 " }\n" +
 " ],\n" +
