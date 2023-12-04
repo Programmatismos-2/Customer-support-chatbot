@@ -1,15 +1,26 @@
 package project.src.main.java.com.freddo;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class CheckInPage {
-    Mediator med = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
-    public void opencheckWindow() {
+    //Mediator med = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
+    public void opencheckWindow(int a) {
         JFrame checkFrame = new JFrame("Check-In");
         checkFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   // Κλείστε αυτό το παράθυρο όταν κλείσετε την επιλογή κρατήσεων
         checkFrame.setSize(600, 400);
         checkFrame.setVisible(true);    //Κάνει ορατό το νέο παράθυρο
         checkFrame.setLayout(null);
         checkFrame.setIconImage(logo.getImage());
+
+        if (a == 0) {
+            JLabel arl1 = new JLabel("Το προφίλ δεν βρέθηκε. Παρακαλώ εγγραφείτε.");
+            alr1.setBounds(200, 10, 100, 30);
+            signinFrame.add(alr1);
+        }
 
         JTextField nameF1 = new JTextField();
         JTextField surnameF1 = new JTextField();
@@ -49,10 +60,20 @@ public class CheckInPage {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                /*
-                med.dataInput(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
-                */
+                if (med.FindStringInFile(surnameF1.getText(), flightF1.getText()) == false) {
+                    //med.dataInput(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
+                } else {
+                    JLabel alr = new JLabel("Είστε ήδη εγκεγραμμένος");
+                    alr.setBounds(200, 250, 200, 30);
+                    checkFrame.add(alr);
+                }
                 checkFrame.dispose();
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        new Chatbot().setVisible(true);
+                    }
+                });
             }
         });
     }

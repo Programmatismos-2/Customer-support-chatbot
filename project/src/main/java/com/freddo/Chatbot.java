@@ -12,8 +12,9 @@ public class Chatbot extends JFrame {
     JTextArea chatArea;
     JTextField input;
     List<String> conversation;
+    //Φτιάχνω αντικείμενο της κλάσης που φέρνει μηνύματα από το AI
 
-    public Chatbot() {
+    public Chatbot(String names) {
         setTitle("Chatbot App");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
@@ -23,6 +24,10 @@ public class Chatbot extends JFrame {
         chatArea = new JTextArea(15, 20);
         chatArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(chatArea);
+
+        String botResponse = "Chatbot: Γεια σου " + names;
+        conversation.add(botResponse);
+        updateChatArea();
 
         input = new JTextField(20);
         input.addActionListener(new ActionListener() {
@@ -78,9 +83,9 @@ public class Chatbot extends JFrame {
         conversation.add("You: " + userMessage);
         updateChatArea();
 
-        // Εδώ μπορείτε να καλέσετε τον chatbot και να λάβετε την απάντησή του.
-        // Στο παράδειγμα αυτό, απλά προσθέτουμε μια σκληροκωδιμένη απάντηση.
-        String botResponse = "Chatbot: Συνεχίστε...";
+        //String answer = ;
+        //Καλώ την μέθοδο της mediator για να λάβω την απάντηση
+        String botResponse = "Chatbot: Ναι φυσικά. " + answer + " Αν θέλεις, κάνε μια καινούργια ερώτηση.";
         conversation.add(botResponse);
         updateChatArea();
 
