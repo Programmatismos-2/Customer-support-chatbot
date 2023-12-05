@@ -6,7 +6,7 @@ import project.src.main.java.com.freddo.Ai;
 
 public class SaveUsersHistory {
 
-    public static String SaveEmailAndQuestion(String email,String Question) {
+    public static String SaveEmailAndQuestion(String flightnumber,String Question) {
 
 
         String csvFilePath = "your_file.csv";
@@ -17,7 +17,7 @@ public class SaveUsersHistory {
         System.out.println("Original Text: " + inputText);
         System.out.println("Text without Commas: " + textWithoutCommas);
 
-        saveDataToCSV(email, Question, textWithoutCommas, csvFilePath);
+        saveDataToCSV(flightnumber, Question, textWithoutCommas, csvFilePath);
         return inputText;
 
     }
