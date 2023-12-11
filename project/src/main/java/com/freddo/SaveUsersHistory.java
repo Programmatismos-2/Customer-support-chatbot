@@ -5,13 +5,13 @@ import java.io.IOException;
 
 public class SaveUsersHistory {
 
-    public static String SaveEmailAndQuestion(String flightnumber,String Question) {
+    public static String SaveEmailAndQuestion(String flightnumber,String Question) throws IOException, InterruptedException{
 
 
         String csvFilePath = "your_file.csv";
 
       //  Ai aiobj = new Ai();
-        String inputText = Ai.hey();//θα καλώ την AI
+        String inputText = Ai.hey("question");//θα καλώ την AI
         String textWithoutCommas = removeCommas(inputText);
         System.out.println("Original Text: " + inputText);
         System.out.println("Text without Commas: " + textWithoutCommas);
