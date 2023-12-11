@@ -1,4 +1,3 @@
-package project.src.main.java.com.freddo;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -8,8 +7,8 @@ import java.net.http.HttpRequest.BodyPublishers;
  
 public class Ai {
 static HttpClient client = HttpClient.newHttpClient();
-    public static String hey() throws IOException, InterruptedException {
-        String a = GiveFileToAI.fileToVariable(" ποιοι ειναι οι κανονισμοι για εγκειμονουσεσ ");
+    public static String hey(String question) throws IOException, InterruptedException {
+        String a = GiveFileToAI.fileToVariable(question);
         String requestBody = "{\n" +
         " \"instances\": [\n" +
         " {\n" +
@@ -26,7 +25,7 @@ static HttpClient client = HttpClient.newHttpClient();
         " }\n" +
         "}";
         HttpRequest request = HttpRequest.newBuilder()
-        .uri(URI.create("https://europe-west9-aiplatform.googleapis.com/v1/projects/clever-bounty-404116/locations/europe-west9/publishers/google/models/text-bison:predict"))
+        .uri(URI.create("https://server_location-aiplatform.googleapis.com/v1/projects/project_name/locations/server_location/publishers/google/models/text-bison:predict"))
         .POST(BodyPublishers.ofString(requestBody))
         .header("Content-Type", "application/json")
         .header("Authorization", "Bearer " + RunBashCommand.aoth2())
