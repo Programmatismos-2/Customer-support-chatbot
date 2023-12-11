@@ -33,12 +33,6 @@ public class SaveUsersHistory {
             e.printStackTrace(); // Handle the exception according to your needs
         }
     }
-
-    public static void main(String[] args){
-        SaveEmailAndQuestion("aphroditebenou@gmail.com","Hi");
-    }
-
-
     private static String removeCommas(String inputText) {
         // Use the replace method to remove all commas
         return inputText.replaceAll(",", "");
