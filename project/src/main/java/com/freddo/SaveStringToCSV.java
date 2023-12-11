@@ -1,4 +1,4 @@
-package project.src.main.java.com.freddo;
+package com.freddo;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
