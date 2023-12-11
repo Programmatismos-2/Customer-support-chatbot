@@ -1,8 +1,7 @@
+package com.freddo;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import project.src.main.java.com.freddo.Ai;
 
 public class SaveUsersHistory {
 
