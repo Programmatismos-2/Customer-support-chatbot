@@ -1,4 +1,4 @@
-package project.src.main.java.com.freddo;
+package com.freddo;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
