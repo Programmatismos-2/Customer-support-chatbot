@@ -45,7 +45,7 @@ public class SignInPage {
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
                         public void run() {
-                            new Chatbot(surnameF2.getText()).setVisible(true);
+                            new Chatbot(surnameF2.getText(), flightF2.getText()).setVisible(true);
                         }
                     });
                 } else {

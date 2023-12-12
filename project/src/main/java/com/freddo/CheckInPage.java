@@ -66,7 +66,7 @@ public class CheckInPage {
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        new Chatbot().setVisible(true);
+                        new Chatbot(surnameF1.getText(), flightF1.getText()).setVisible(true);
                     }
                 });
             }

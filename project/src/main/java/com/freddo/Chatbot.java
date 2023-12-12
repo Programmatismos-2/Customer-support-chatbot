@@ -14,7 +14,7 @@ public class Chatbot extends JFrame {
     List<String> conversation;
     //Φτιάχνω αντικείμενο της κλάσης που φέρνει μηνύματα από το AI
 
-    public Chatbot(String names) {
+    public Chatbot(String names, String fli) {
         setTitle("Chatbot App");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
@@ -83,8 +83,7 @@ public class Chatbot extends JFrame {
         conversation.add("You: " + userMessage);
         updateChatArea();
 
-        //String answer = ;
-        //Καλώ την μέθοδο της mediator για να λάβω την απάντηση
+        answer = SaveUsersHistory.SaveEmailAndQuestion(fli, userMessage);
         String botResponse = "Chatbot: Ναι φυσικά. " + answer + " Αν θέλεις, κάνε μια καινούργια ερώτηση.";
         conversation.add(botResponse);
         updateChatArea();
