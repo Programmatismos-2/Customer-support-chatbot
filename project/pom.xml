@@ -51,6 +51,16 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <!-- Main class --> 
+          <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.freddo.Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <!--End-->
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -71,5 +81,13 @@
         </plugin>
       </plugins>
     </pluginManagement>
+     <!-- images -->
+    <resources>
+       <resource>
+        <directory>HomePlane1.jpg</directory>
+        <includes><include>*.jpg</include></includes>
+      </resource>
+    </resources>
+    <!--End-->
   </build>
 </project>
