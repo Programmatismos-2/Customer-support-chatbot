@@ -3,7 +3,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class SignInPage {
     //Mediator med1 = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
@@ -47,8 +49,11 @@ public class SignInPage {
                         }
                     });
                 } else {
-                    CheckInPage chpage = new CheckInPage();
-                    chpage.opencheckWindow(0);
+                    int ans = JOptionPane.showConfirmDialog(null, "Δεν είστε εγγεγραμμένος. Παρακαλώ εγγραφείτε", "Πρόβλημα Σύνδεσης", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                    if (ans == 0 || ans == -1) {
+                        CheckInPage chpage = new CheckInPage();
+                        chpage.opencheckWindow();
+                    }
                 }
                 signinFrame.dispose();
             }

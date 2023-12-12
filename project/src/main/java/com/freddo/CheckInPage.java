@@ -7,8 +7,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class CheckInPage {
-    //Mediator med = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
-    public void opencheckWindow(int a) {
+    
+    public void opencheckWindow() {
         JFrame checkFrame = new JFrame("Check-In");
         checkFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);   // Κλείστε αυτό το παράθυρο όταν κλείσετε την επιλογή κρατήσεων
         checkFrame.setSize(600, 400);
@@ -16,11 +16,6 @@ public class CheckInPage {
         checkFrame.setLayout(null);
         checkFrame.setIconImage(logo.getImage());
 
-        if (a == 0) {
-            JLabel arl1 = new JLabel("Το προφίλ δεν βρέθηκε. Παρακαλώ εγγραφείτε.");
-            alr1.setBounds(200, 10, 100, 30);
-            signinFrame.add(alr1);
-        }
 
         JTextField nameF1 = new JTextField();
         JTextField surnameF1 = new JTextField();
@@ -61,7 +56,7 @@ public class CheckInPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (med.FindStringInFile(surnameF1.getText(), flightF1.getText()) == false) {
-                    //med.dataInput(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
+                    SaveUsersCredentials.SaveStringToCSV(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
                 } else {
                     JLabel alr = new JLabel("Είστε ήδη εγκεγραμμένος");
                     alr.setBounds(200, 250, 200, 30);
