@@ -8,7 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class SignInPage {
-    //Mediator med1 = new Mediator();    //Φτιάχνει αντικείμενο από την Mediator Class
     public String openSignInWindow() {
         JFrame signinFrame = new JFrame("Sign In - Σύνδεση");
         signinFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);     // Κλείστε αυτό το παράθυρο όταν κλείσετε το chatbot
@@ -40,7 +39,7 @@ public class SignInPage {
         submit1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                boolean cont = med1.FindStringInFile(surnameF2.getText(), flightF2.getText());    //Καλεί την μέθοδο του Mediator για αναζήτηση δεδομένων
+                boolean cont = FlightChecker.checkFlightExistence(surnameF2.getText(), flightF2.getText());    //Καλεί την μέθοδο του Mediator για αναζήτηση δεδομένων
                 if (cont) {
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override

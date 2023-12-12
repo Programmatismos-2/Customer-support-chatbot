@@ -55,7 +55,7 @@ public class CheckInPage {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (med.FindStringInFile(surnameF1.getText(), flightF1.getText()) == false) {
+                if (FlightChecker.checkFlightExistence(surnameF1.getText(), flightF1.getText()) == false) {
                     SaveUsersCredentials.SaveStringToCSV(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());    //Καλεί την μέθοδο του Mediator για εισαγωγή δεδομένων
                 } else {
                     JLabel alr = new JLabel("Είστε ήδη εγκεγραμμένος");
