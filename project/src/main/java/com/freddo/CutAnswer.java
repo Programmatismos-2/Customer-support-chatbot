@@ -1,3 +1,4 @@
+package com.freddo;
 import java.io.IOException;
  
 public class CutAnswer {
