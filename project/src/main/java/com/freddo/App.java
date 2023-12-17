@@ -19,8 +19,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("Chatbot App");
-        Image icon = new Image("chatbot1.jpg");
-        stage.getIcons().add(icon);
+        //Image icon = new Image("chatbot1.jpg");
+        //stage.getIcons().add(icon);
         
 
         try {

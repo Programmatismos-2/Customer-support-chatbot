@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="494.0" fitWidth="692.0" pickOnBounds="true">
          <image>
-            <Image url="@HomePlane.jpeg" />
+            <Image url="@../../../../HomePlane.jpeg" />
          </image>
       </ImageView>
       <SplitPane dividerPositions="0.41190108191653774" layoutX="54.0" layoutY="43.0" prefHeight="407.0" prefWidth="583.0">
