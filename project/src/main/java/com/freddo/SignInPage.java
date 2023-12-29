@@ -42,31 +42,39 @@ public class SignInPage {
         signinFrame.add(flightF2, gbc);
 
         JButton submit1Button = new JButton("Submit");
-        gbc.gridx = 1;
-        gbc.gridy = 2;
-        gbc.anchor = GridBagConstraints.EAST;
-        signinFrame.add(submit1Button, gbc);
+gbc.gridx = 1;
+gbc.gridy = 2;
+gbc.anchor = GridBagConstraints.EAST;
+signinFrame.add(submit1Button, gbc);
 
-        submit1Button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String cont = FlightChecker.checkFlightExistence(surnameF2.getText(), flightF2.getText());
-                if (cont=="false") {
-                    int ans = JOptionPane.showConfirmDialog(null, "Δεν είστε εγγεγραμμένος. Παρακαλώ εγγραφείτε", "Πρόβλημα Σύνδεσης", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-                    if (ans == 0 || ans == -1) {
-                        CheckInPage chpage = new CheckInPage();
-                        chpage.openCheckWindow();
-                    }
-                } else {
-                    SwingUtilities.invokeLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            new Chatbot(surnameF2.getText(), flightF2.getText(), cont).setVisible(true);
-                        }
-                    });
+submit1Button.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String surname = surnameF2.getText();
+        String flightNumber = flightF2.getText();
+
+        // Check if any of the fields is empty
+        if (surname.isEmpty() || flightNumber.isEmpty()) {
+            JOptionPane.showMessageDialog(signinFrame, "Please fill in all the fields.", "Missing Information", JOptionPane.WARNING_MESSAGE);
+        } else {
+            String cont = FlightChecker.checkFlightExistence(surname, flightNumber);
+            if (cont.equals("false")) {
+                int ans = JOptionPane.showConfirmDialog(null, "Δεν είστε εγγεγραμμένος. Παρακαλώ εγγραφείτε", "Πρόβλημα Σύνδεσης", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                if (ans == 0 || ans == -1) {
+                    CheckInPage chpage = new CheckInPage();
+                    chpage.openCheckWindow();
                 }
-                signinFrame.dispose();
+            } else {
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        new Chatbot(surname, flightNumber, cont).setVisible(true);
+                    }
+                });
             }
-        });
+            signinFrame.dispose();
+        }
+    }
+});
     }
 }
