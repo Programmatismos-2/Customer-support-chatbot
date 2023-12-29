@@ -61,23 +61,36 @@ public class CheckInPage {
         JButton submitButton = createButton("Submit", new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String output = FlightChecker.checkFlightExistence(surnameF1.getText(), flightF1.getText());
-                if (output == "false") {
-                    SaveUsersCredentials.SaveStringToCSV(nameF1.getText(), surnameF1.getText(), flightF1.getText(), emailF1.getText());
+                String name = nameF1.getText();
+                String surname = surnameF1.getText();
+                String flightNumber = flightF1.getText();
+                String email = emailF1.getText();
+        
+                // Check if any of the fields is empty
+                if (name.isEmpty() || surname.isEmpty() || flightNumber.isEmpty() || email.isEmpty()) {
+                    JOptionPane.showMessageDialog(checkFrame, "Please fill in all the fields.", "Missing Information", JOptionPane.WARNING_MESSAGE);
+                } else if (!isValidEmail(email)) {
+                    JOptionPane.showMessageDialog(checkFrame, "Please enter a valid email address.", "Invalid Email", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    JLabel alr = new JLabel("Είστε ήδη εγγεγραμμένος");
-                    alr.setBounds(200, 250, 200, 30);
-                    checkFrame.add(alr);
-                }
-                checkFrame.dispose();
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        new Chatbot(surnameF1.getText(), flightF1.getText(), output).setVisible(true);
+                    String output = FlightChecker.checkFlightExistence(surname, flightNumber);
+                    if (output.equals("false")) {
+                        SaveUsersCredentials.SaveStringToCSV(name, surname, flightNumber, email);
+                    } else {
+                        JLabel alr = new JLabel("Είστε ήδη εγγεγραμμένος");
+                        alr.setBounds(200, 250, 200, 30);
+                        checkFrame.add(alr);
                     }
-                });
+                    checkFrame.dispose();
+                    SwingUtilities.invokeLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            new Chatbot(surname, flightNumber, output).setVisible(true);
+                        }
+                    });
+                }
             }
         });
+        
 
         gbc.gridx = 1;
         gbc.gridy = 4;
@@ -99,5 +112,11 @@ public class CheckInPage {
         JButton button = new JButton(text);
         button.addActionListener(listener);
         return button;
+    }
+
+    private boolean isValidEmail(String email) {
+        // Use a simple regular expression for email validation
+        String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$";
+        return email.matches(emailRegex);
     }
 }
