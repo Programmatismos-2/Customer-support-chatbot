@@ -1,11 +1,17 @@
 package com.freddo;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 
 public class Home_Page extends JFrame {
     final static ImageIcon logo = new ImageIcon("/Users/fanisorfan/code/projmv/Mediator-Class-1/Mediator-Class/GUI-Class/project/src/resources/chatbot1.jpg"); // Change the path accordingly
