@@ -76,6 +76,7 @@ public class CheckInPage {
                     if (output.equals("false")) {
                         SaveUsersCredentials.SaveStringToCSV(name, surname, flightNumber, email);
                     } else {
+                        JOptionPane.showMessageDialog(checkFrame, "You have allready checked in.", "Already checked in.", JOptionPane.INFORMATION_MESSAGE);
                         JLabel alr = new JLabel("Είστε ήδη εγγεγραμμένος");
                         alr.setBounds(200, 250, 200, 30);
                         checkFrame.add(alr);
