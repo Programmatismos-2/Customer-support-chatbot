@@ -28,6 +28,8 @@ public class Chatbot extends JFrame {
 
         chatArea = new JTextArea(15, 20);
         chatArea.setEditable(false);
+        chatArea.setLineWrap(true);
+        chatArea.setWrapStyleWord(true);
         JScrollPane scrollPane = new JScrollPane(chatArea);
 
         conversation = new ArrayList<>();
