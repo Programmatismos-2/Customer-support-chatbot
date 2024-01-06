@@ -14,18 +14,25 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 public class Home_Page extends JFrame {
-    final static ImageIcon homePic = new ImageIcon("/Users/fanisorfan/code/projmv/Mediator-Class-1/Mediator-Class/GUI-Class/project/src/resources/HomePlane1.jpg");
-    private JButton signinButton; // Declare signinButton as an instance variable
-    private JButton checkButton;  // Declare checkButton as an instance variable
 
+    // ImageIcon for the home picture
+    final static ImageIcon homePic = new ImageIcon("/path/to/image.jpg");
+
+    // Declare signinButton and checkButton as instance variables
+    private JButton signinButton;
+    private JButton checkButton;
+
+    // Constructor for the Home_Page class
     public Home_Page() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 530);
         setLayout(null);
-        
+
+        // Create JLabel to display the home picture
         JLabel lab1 = new JLabel(homePic);
         lab1.setSize(800, 530);
 
+        // Initialize signinButton and checkButton
         signinButton = new JButton("Sign In");
         checkButton = new JButton("Check In");
         signinButton.setBounds(150, 265, 200, 50);
@@ -36,18 +43,22 @@ public class Home_Page extends JFrame {
         signinButton.setOpaque(true);
         checkButton.setOpaque(true);
 
-        Color customColor = new Color(51, 153, 210); // Red
+        // Set background color for buttons
+        Color customColor = new Color(51, 153, 210);
         signinButton.setBackground(customColor);
         checkButton.setBackground(customColor);
 
+        // Add components to the frame
         add(lab1);
         add(signinButton);
         add(checkButton);
 
+        // Set component order for proper layering
         setComponentZOrder(signinButton, 0);
         setComponentZOrder(checkButton, 1);
         setComponentZOrder(lab1, 2);
 
+        // Add component listener for resizing
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -55,6 +66,7 @@ public class Home_Page extends JFrame {
             }
         });
 
+        // ActionListener for signinButton
         signinButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,6 +76,7 @@ public class Home_Page extends JFrame {
             }
         });
 
+        // ActionListener for checkButton
         checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,9 +86,11 @@ public class Home_Page extends JFrame {
             }
         });
 
+        // Make the frame visible
         setVisible(true);
     }
 
+    // Method to resize the image and buttons based on the frame size
     private void resizeImageAndButtons(JLabel label, ImageIcon icon) {
         Image img = icon.getImage();
         Image newImg = img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
@@ -90,6 +105,7 @@ public class Home_Page extends JFrame {
         checkButton.setBounds(label.getWidth() * 3 / 4 - buttonWidth / 2, buttonY, buttonWidth, buttonHeight);
     }
 
+    // Main method to start the application
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Home_Page());
     }
