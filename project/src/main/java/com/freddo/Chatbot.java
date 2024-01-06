@@ -15,17 +15,22 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+// Chatbot class for handling the chatbot window
 public class Chatbot extends JFrame {
+
     JTextArea chatArea;
     JTextField input;
     List<String> conversation;
     String email;
     String fli;
     String names;
+
+    // Constructor for the Chatbot class
     public Chatbot(String names, String fli, String email) {
         this.fli = fli;
         this.names = names;
         this.email = email;
+        
         setTitle("Chatbot App");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Set to DO_NOTHING_ON_CLOSE to handle window close event
         setSize(600, 400);
@@ -43,6 +48,7 @@ public class Chatbot extends JFrame {
         JButton sendButton = new JButton("Send");
         JButton backButton = new JButton("Back to Homepage");
 
+        // ActionListener for processing user input
         input.addActionListener(e -> {
             try {
                 processUserInput();
@@ -50,6 +56,8 @@ public class Chatbot extends JFrame {
                 e1.printStackTrace();
             }
         });
+
+        // ActionListener for the send button
         sendButton.addActionListener(e -> {
             try {
                 processUserInput();
@@ -58,13 +66,13 @@ public class Chatbot extends JFrame {
             }
         });
 
+        // ActionListener for the back button
         backButton.addActionListener(e -> {
             dispose();
             new Home_Page();
             try {
                 saveConversation();
             } catch (IOException | InterruptedException e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
         });
@@ -74,6 +82,7 @@ public class Chatbot extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);  // Increased insets for padding
 
+        // Add scroll pane for the chat area
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
@@ -82,6 +91,7 @@ public class Chatbot extends JFrame {
         gbc.fill = GridBagConstraints.BOTH;
         add(scrollPane, gbc);
 
+        // Add text field for user input
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
@@ -90,12 +100,14 @@ public class Chatbot extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         add(input, gbc);
 
+        // Add send button
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.weightx = 0.0;
         gbc.weighty = 0.0;
         add(sendButton, gbc);
 
+        // Add back button
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
@@ -108,15 +120,14 @@ public class Chatbot extends JFrame {
                 try {
                     saveConversation();
                 } catch (IOException | InterruptedException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
-                // You can add additional logic here if needed
                 dispose(); // Close the window
             }
         });
     }
 
+    // Method to process user input and update the chat area
     private void processUserInput() throws IOException, InterruptedException {
         String userMessage = input.getText();
         conversation.add("You: " + userMessage);
@@ -133,6 +144,7 @@ public class Chatbot extends JFrame {
         input.setText("");
     }
 
+    // Method to update the chat area with the conversation
     private void updateChatArea() {
         chatArea.setText("");
         for (String message : conversation) {
@@ -140,10 +152,11 @@ public class Chatbot extends JFrame {
         }
     }
 
+    // Method to save the conversation
     private void saveConversation() throws IOException, InterruptedException {
         String conv = getConversationAsString();
-        if (conv.isEmpty()==false) {
-        SaveUsersHistory.SaveEmailAndQuestion(email, conv);
+        if (conv.isEmpty() == false) {
+            SaveUsersHistory.SaveEmailAndQuestion(email, conv);
         }
         // You can also save the conversation to a file or perform other actions here
     }
@@ -157,9 +170,10 @@ public class Chatbot extends JFrame {
         return qonv.toString();
     }
 
+    // Main method for testing the Chatbot class
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new Chatbot("", "","").setVisible(true);
+            new Chatbot("", "", "").setVisible(true);
         });
     }
 }
