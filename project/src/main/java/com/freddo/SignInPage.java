@@ -13,8 +13,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+// SignInPage class for handling the sign-in window
 public class SignInPage {
+
+    // Method to open the sign-in window
     public void openSignInWindow() {
+        // Create the sign-in frame
         JFrame signinFrame = new JFrame("Sign In - Σύνδεση");
         signinFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         signinFrame.setSize(600, 400);
@@ -25,6 +29,7 @@ public class SignInPage {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
 
+        // Create text fields and labels for surname and flight number
         JTextField surnameF2 = new JTextField();
         JTextField flightF2 = new JTextField();
         JLabel surnameL2 = new JLabel("Surname");
@@ -33,6 +38,7 @@ public class SignInPage {
         surnameF2.setColumns(20);
         flightF2.setColumns(20);
 
+        // Set grid positions for components
         gbc.gridx = 0;
         gbc.gridy = 0;
         signinFrame.add(surnameL2, gbc);
@@ -49,40 +55,46 @@ public class SignInPage {
         gbc.gridy = 1;
         signinFrame.add(flightF2, gbc);
 
+        // Create and configure the submit button
         JButton submit1Button = new JButton("Submit");
-gbc.gridx = 1;
-gbc.gridy = 2;
-gbc.anchor = GridBagConstraints.EAST;
-signinFrame.add(submit1Button, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.anchor = GridBagConstraints.EAST;
+        signinFrame.add(submit1Button, gbc);
 
-submit1Button.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String surname = surnameF2.getText();
-        String flightNumber = flightF2.getText();
+        // ActionListener for the submit button
+        submit1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Get input values from text fields
+                String surname = surnameF2.getText();
+                String flightNumber = flightF2.getText();
 
-        // Check if any of the fields is empty
-        if (surname.isEmpty() || flightNumber.isEmpty()) {
-            JOptionPane.showMessageDialog(signinFrame, "Please fill in all the fields.", "Missing Information", JOptionPane.WARNING_MESSAGE);
-        } else {
-            String cont = FlightChecker.checkFlightExistence(surname, flightNumber);
-            if (cont.equals("false")) {
-                int ans = JOptionPane.showConfirmDialog(null, "Δεν είστε εγγεγραμμένος. Παρακαλώ εγγραφείτε", "Πρόβλημα Σύνδεσης", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-                if (ans == 0 || ans == -1) {
-                    CheckInPage chpage = new CheckInPage();
-                    chpage.openCheckWindow();
-                }
-            } else {
-                SwingUtilities.invokeLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        new Chatbot(surname, flightNumber, cont).setVisible(true);
+                // Check if any of the fields is empty
+                if (surname.isEmpty() || flightNumber.isEmpty()) {
+                    JOptionPane.showMessageDialog(signinFrame, "Please fill in all the fields.", "Missing Information", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    // Check flight existence and take appropriate actions
+                    String cont = FlightChecker.checkFlightExistence(surname, flightNumber);
+                    if (cont.equals("false")) {
+                        int ans = JOptionPane.showConfirmDialog(null, "Δεν είστε εγγεγραμμένος. Παρακαλώ εγγραφείτε", "Πρόβλημα Σύνδεσης", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                        if (ans == 0 || ans == -1) {
+                            CheckInPage chpage = new CheckInPage();
+                            chpage.openCheckWindow();
+                        }
+                    } else {
+                        // Open the Chatbot window with user details
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                new Chatbot(surname, flightNumber, cont).setVisible(true);
+                            }
+                        });
                     }
-                });
+                    // Close the sign-in window
+                    signinFrame.dispose();
+                }
             }
-            signinFrame.dispose();
-        }
-    }
-});
+        });
     }
 }
