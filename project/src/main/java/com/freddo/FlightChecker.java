@@ -6,7 +6,7 @@ import java.io.IOException;
 public class FlightChecker {
 
     public static String checkFlightExistence(String lastName, String flightNumber) {
-        String csvFilePath = "/Users/fanisorfan/code/projmv/Mediator-Class-1/Mediator-Class/output.csv";
+        String csvFilePath = "/path/to/output.csv";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
