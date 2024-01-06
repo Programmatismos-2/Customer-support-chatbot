@@ -14,7 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 public class Home_Page extends JFrame {
-    final static ImageIcon logo = new ImageIcon("/Users/fanisorfan/code/projmv/Mediator-Class-1/Mediator-Class/GUI-Class/project/src/resources/chatbot1.jpg"); // Change the path accordingly
     final static ImageIcon homePic = new ImageIcon("/Users/fanisorfan/code/projmv/Mediator-Class-1/Mediator-Class/GUI-Class/project/src/resources/HomePlane1.jpg");
     private JButton signinButton; // Declare signinButton as an instance variable
     private JButton checkButton;  // Declare checkButton as an instance variable
@@ -23,9 +22,6 @@ public class Home_Page extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 530);
         setLayout(null);
-
-        setIconImage(logo.getImage());
-
         
         JLabel lab1 = new JLabel(homePic);
         lab1.setSize(800, 530);
