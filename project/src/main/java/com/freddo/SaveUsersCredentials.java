@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class SaveUsersCredentials {
     public static void SaveStringToCSV(String email, String firstname, String lastname, String flightnumber ) {
-        String filePath = "output.csv"; // Path to the CSV file
+        String filePath = "path/to/output.csv"; // Path to the CSV file
 
 
         try {
