@@ -1,3 +1,7 @@
+/**
+ * This class represents a FlightChecker, which is used to check the existence of a flight
+ * based on the last name and flight number.
+ */
 package com.freddo;
 
 import java.io.BufferedReader;
