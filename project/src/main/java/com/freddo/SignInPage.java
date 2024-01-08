@@ -1,7 +1,3 @@
-/**
-* Creates the page where the user signs in using surname and flight number, proceeding only if the user is found in the database.
-*/
-
 package com.freddo;
 
 import java.awt.Dimension;
@@ -17,7 +13,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-// SignInPage class for handling the sign-in window
+/**
+* Creates the page where the user signs in using surname and flight number, proceeding only if the user is found in the database.
+*/
 public class SignInPage {
 
     // Method to open the sign-in window

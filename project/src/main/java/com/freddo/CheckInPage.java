@@ -1,7 +1,3 @@
-/**
-* Creates page for the user to check in using surname, name, flight number and email.
-*/
-
 package com.freddo;
 
 import java.awt.Dimension;
@@ -17,7 +13,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-// CheckInPage class for handling the check-in window
+/**
+* Creates page for the user to check in using surname, name, flight number and email.
+*/
 public class CheckInPage {
 
     // Method to open the check-in window

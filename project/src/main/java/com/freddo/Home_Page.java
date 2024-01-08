@@ -1,7 +1,3 @@
-/**
-* Creates the starting page of the application, where the user decides whether he wants to sign in or check in.
-*/
-
 package com.freddo;
 
 import java.awt.Color;
@@ -17,6 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
+/**
+* Creates the starting page of the application, where the user decides whether he wants to sign in or check in.
+*/
 public class Home_Page extends JFrame {
 
     // ImageIcon for the home picture

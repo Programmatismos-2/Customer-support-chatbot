@@ -1,6 +1,3 @@
-/**
-* Creates chatbot page for the user to interact with the AI, asking it questions regarding the Terms and Conditions of SkyExpress.
-*/
 package com.freddo;
 
 import java.awt.GridBagConstraints;
@@ -11,6 +8,7 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -18,7 +16,9 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-// Chatbot class for handling the chatbot window
+/**
+* Creates page for the user to check in using surname, name, flight number and email.
+*/
 public class Chatbot extends JFrame {
     JTextArea chatArea;
     JTextField input;
@@ -26,6 +26,7 @@ public class Chatbot extends JFrame {
     String email;
     String fli;
     String names;
+
     // Constructor for the Chatbot class that creates the chatbot frame with its components
     public Chatbot(String names, String fli, String email) {
         this.fli = fli; 
@@ -132,15 +133,12 @@ public class Chatbot extends JFrame {
         conversation.add("You: " + userMessage);
         updateChatArea();
 
-        // Replace this with your logic to get a response
         // String answer = SaveUsersHistory.SaveEmailAndQuestion(fli, userMessage);
-        String answer = Ai.hey(userMessage); // Replace with actual response logic
-
+        String answer = Ai.hey(userMessage); // Use AI class to get answer from bot
         String botResponse = "Chatbot: " + answer;
         conversation.add(botResponse);
         updateChatArea();
-
-        input.setText("");
+        input.setText("");  // Clears input text field 
     }
 
     // Method to update the chat area with the conversation
