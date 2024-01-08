@@ -166,11 +166,4 @@ public class Chatbot extends JFrame {
         }
         return qonv.toString();
     }
-
-    // Main method for testing the Chatbot class
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new Chatbot("", "", "").setVisible(true);
-        });
-    }
 }
