@@ -3,8 +3,9 @@ package com.freddo;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-
-// SaveUsersCredentials class for saving user credentials to a CSV file
+/*
+ * SaveUsersCredentials class for saving user credentials to a CSV file
+ */
 public class SaveUsersCredentials {
 
     // Method to save user credentials to a CSV file
