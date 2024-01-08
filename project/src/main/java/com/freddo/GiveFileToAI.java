@@ -11,7 +11,7 @@ public class GiveFileToAI {
 
     public static String fileToVariable(String userquestion) throws IOException {
         // Specify the path to the file
-        String filePath = "/your/Terms&ConditionsFile.txt";
+        String filePath = "/path/to/testTermsandConditions.txt";
 
         // Create a BufferedReader to read the file
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
