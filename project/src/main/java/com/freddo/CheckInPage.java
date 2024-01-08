@@ -91,8 +91,8 @@ public class CheckInPage {
                 } else if (!isValidEmail(email)) {
                     JOptionPane.showMessageDialog(checkFrame, "Please enter a valid email address.", "Invalid Email", JOptionPane.WARNING_MESSAGE);
                 } else {
-                    // Check flight existence and take appropriate actions
-                    String output = FlightChecker.checkFlightExistence(surname, flightNumber);
+                    // Check customer existence and take appropriate actions
+                    String output = CustomerChecker.checkCustomerExistence(surname, flightNumber);
                     if (output.equals("false")) {
                         // Save user credentials to CSV
                         SaveUsersCredentials.SaveStringToCSV(name, surname, flightNumber, email);
