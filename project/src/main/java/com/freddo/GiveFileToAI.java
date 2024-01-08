@@ -11,7 +11,7 @@ public class GiveFileToAI {
 
     public static String fileToVariable(String userquestion) throws IOException {
         // Specify the path to the file
-        String filePath = "/Users/fanisorfan/code/projmv/Mediator-Class-1/Mediator-Class/GUI-Class/project/src/resources/1.txt";
+        String filePath = "/your/Terms&ConditionsFile.txt";
 
         // Create a BufferedReader to read the file
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
