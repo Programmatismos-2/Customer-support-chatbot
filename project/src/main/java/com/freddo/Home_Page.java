@@ -107,9 +107,4 @@ public class Home_Page extends JFrame {
         signinButton.setBounds(label.getWidth() / 4 - buttonWidth / 2, buttonY, buttonWidth, buttonHeight);
         checkButton.setBounds(label.getWidth() * 3 / 4 - buttonWidth / 2, buttonY, buttonWidth, buttonHeight);
     }
-
-    // Main method to start the application
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Home_Page());
-    }
 }
