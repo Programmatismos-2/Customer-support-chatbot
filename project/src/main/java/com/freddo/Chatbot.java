@@ -1,3 +1,6 @@
+/**
+* Creates chatbot page for the user to interact with the AI, asking it questions regarding the Terms and Conditions of SkyExpress.
+*/
 package com.freddo;
 
 import java.awt.GridBagConstraints;
@@ -17,33 +20,29 @@ import javax.swing.SwingUtilities;
 
 // Chatbot class for handling the chatbot window
 public class Chatbot extends JFrame {
-
     JTextArea chatArea;
     JTextField input;
     List<String> conversation;
     String email;
     String fli;
     String names;
-
-    // Constructor for the Chatbot class
+    // Constructor for the Chatbot class that creates the chatbot frame with its components
     public Chatbot(String names, String fli, String email) {
-        this.fli = fli;
+        this.fli = fli; 
         this.names = names;
         this.email = email;
-        
         setTitle("Chatbot App");
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Set to DO_NOTHING_ON_CLOSE to handle window close event
         setSize(600, 400);
         setVisible(true);
-
+        
+        //Creation of components
         chatArea = new JTextArea(15, 20);
         chatArea.setEditable(false);
         chatArea.setLineWrap(true);
         chatArea.setWrapStyleWord(true);
         JScrollPane scrollPane = new JScrollPane(chatArea);
-
         conversation = new ArrayList<>();
-
         input = new JTextField(20);
         JButton sendButton = new JButton("Send");
         JButton backButton = new JButton("Back to Homepage");

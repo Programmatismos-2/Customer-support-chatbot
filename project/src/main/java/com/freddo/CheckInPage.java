@@ -1,3 +1,7 @@
+/**
+* Creates page for the user to check in using surname, name, flight number and email.
+*/
+
 package com.freddo;
 
 import java.awt.Dimension;

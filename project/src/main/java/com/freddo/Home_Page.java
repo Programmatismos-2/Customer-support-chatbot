@@ -1,3 +1,7 @@
+/**
+* Creates the starting page of the application, where the user decides whether he wants to sign in or check in.
+*/
+
 package com.freddo;
 
 import java.awt.Color;

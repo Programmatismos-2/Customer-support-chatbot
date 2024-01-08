@@ -1,3 +1,7 @@
+/**
+* Creates the page where the user signs in using surname and flight number, proceeding only if the user is found in the database.
+*/
+
 package com.freddo;
 
 import java.awt.Dimension;
@@ -77,7 +81,7 @@ public class SignInPage {
                     // Check flight existence and take appropriate actions
                     String cont = FlightChecker.checkFlightExistence(surname, flightNumber);
                     if (cont.equals("false")) {
-                        int ans = JOptionPane.showConfirmDialog(null, "Δεν είστε εγγεγραμμένος. Παρακαλώ εγγραφείτε", "Πρόβλημα Σύνδεσης", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+                        int ans = JOptionPane.showConfirmDialog(null, "You are not checked in. Please do so.", "Sign In Problem", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
                         if (ans == 0 || ans == -1) {
                             CheckInPage chpage = new CheckInPage();
                             chpage.openCheckWindow();
