@@ -1,6 +1,8 @@
 package com.freddo;
 import java.io.IOException;
- 
+ /*
+  *  This class cuts the parameters and comments that ai sends us
+  */
 public class CutAnswer {
     public static String cut(String a) throws IOException, InterruptedException {
         try {
