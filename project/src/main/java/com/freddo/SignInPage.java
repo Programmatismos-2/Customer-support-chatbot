@@ -77,7 +77,7 @@ public class SignInPage {
                     JOptionPane.showMessageDialog(signinFrame, "Please fill in all the fields.", "Missing Information", JOptionPane.WARNING_MESSAGE);
                 } else {
                     // Check flight existence and take appropriate actions
-                    String cont = FlightChecker.checkFlightExistence(surname, flightNumber);
+                    String cont = CustomerChecker.checkCustomerExistence(surname, flightNumber);
                     if (cont.equals("false")) {
                         int ans = JOptionPane.showConfirmDialog(null, "You are not checked in. Please do so.", "Sign In Problem", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
                         if (ans == 0 || ans == -1) {
