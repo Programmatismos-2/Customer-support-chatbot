@@ -28,13 +28,15 @@ This repository contains a customer support chatbot that utilizes Google Cloud s
      ```
      Replace `<your-project-name>` with the name of your Google Cloud project.
 
-## Running the Chatbot
+## Running the program
 
-Once you have completed the configuration steps, you can run the customer support chatbot.
+Once you have completed the configuration steps, you can run the customer support app.
 
 ```sh
 # Navigate to the project directory
-cd path/to/customer-support-chatbot
+cd path/to/project
 
-# Run the chatbot
+# Run
+```sh
+mvn package
 # Add any additional commands or instructions here
