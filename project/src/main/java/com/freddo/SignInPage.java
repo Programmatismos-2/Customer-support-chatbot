@@ -1,5 +1,4 @@
 package com.freddo;
-
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -12,12 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-
 /**
 * Creates the page where the user signs in using surname and flight number, proceeding only if the user is found in the database.
 */
 public class SignInPage {
-
     // Method to open the sign-in window
     public void openSignInWindow() {
         // Create the sign-in frame
@@ -27,32 +24,27 @@ public class SignInPage {
         signinFrame.setMinimumSize(new Dimension(400, 400)); // Set minimum size
         signinFrame.setVisible(true);
         signinFrame.setLayout(new GridBagLayout());
-
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
-
+        
         // Create text fields and labels for surname and flight number
         JTextField surnameF2 = new JTextField();
         JTextField flightF2 = new JTextField();
         JLabel surnameL2 = new JLabel("Surname");
         JLabel flightL2 = new JLabel("Flight Number");
-
         surnameF2.setColumns(20);
         flightF2.setColumns(20);
-
+        
         // Set grid positions for components
         gbc.gridx = 0;
         gbc.gridy = 0;
         signinFrame.add(surnameL2, gbc);
-
         gbc.gridx = 1;
         gbc.gridy = 0;
         signinFrame.add(surnameF2, gbc);
-
         gbc.gridx = 0;
         gbc.gridy = 1;
         signinFrame.add(flightL2, gbc);
-
         gbc.gridx = 1;
         gbc.gridy = 1;
         signinFrame.add(flightF2, gbc);
