@@ -35,8 +35,12 @@ Once you have completed the configuration steps, you can run the customer suppor
 ```sh
 # Navigate to the project directory
 cd path/to/project
-
+```
 # Run
 ```sh
 mvn package
+```
+```sh
+java -jar target/project-1.0-SNAPSHOT.jar 
+```
 # Add any additional commands or instructions here
