@@ -43,4 +43,6 @@ mvn package
 ```sh
 java -jar target/project-1.0-SNAPSHOT.jar 
 ```
-# Add any additional commands or instructions here
+# Make sure to 
+Change all the paths to the appropriate ones
+
