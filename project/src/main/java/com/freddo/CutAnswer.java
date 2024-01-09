@@ -22,7 +22,7 @@ public class CutAnswer {
             } else {
                 return "";
             }
-            } catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Error processing input string: " + e.getMessage());
             return "";
         }
