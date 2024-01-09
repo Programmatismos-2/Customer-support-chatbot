@@ -1,5 +1,4 @@
 package com.freddo;
-
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -12,12 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-
 /**
 * Creates page for the user to check in using surname, name, flight number and email.
 */
 public class CheckInPage {
-
     // Method to open the check-in window
     public void openCheckWindow() {
         JFrame checkFrame = new JFrame("Check-In");
@@ -26,7 +23,6 @@ public class CheckInPage {
         checkFrame.setMinimumSize(new Dimension(400, 400)); // Set minimum size
         checkFrame.setVisible(true);
         checkFrame.setLayout(new GridBagLayout());
-
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
 
@@ -46,31 +42,24 @@ public class CheckInPage {
         gbc.gridx = 0;
         gbc.gridy = 0;
         checkFrame.add(nameL1, gbc);
-
         gbc.gridx = 1;
         gbc.gridy = 0;
         checkFrame.add(nameF1, gbc);
-
         gbc.gridx = 0;
         gbc.gridy = 1;
         checkFrame.add(surnameL1, gbc);
-
         gbc.gridx = 1;
         gbc.gridy = 1;
         checkFrame.add(surnameF1, gbc);
-
         gbc.gridx = 0;
         gbc.gridy = 2;
         checkFrame.add(flightL1, gbc);
-
         gbc.gridx = 1;
         gbc.gridy = 2;
         checkFrame.add(flightF1, gbc);
-
         gbc.gridx = 0;
         gbc.gridy = 3;
         checkFrame.add(emailL1, gbc);
-
         gbc.gridx = 1;
         gbc.gridy = 3;
         checkFrame.add(emailF1, gbc);
