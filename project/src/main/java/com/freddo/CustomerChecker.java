@@ -1,18 +1,14 @@
 package com.freddo;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 /**
  * This class represents a CustomerChecker, which is used to check the existence of a customer
  * based on the last name and flight number.
  */
 public class CustomerChecker {
-
     public static String checkCustomerExistence(String lastName, String flightNumber) {
         String csvFilePath = "/path/to/output.csv";
-
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -33,4 +29,3 @@ public class CustomerChecker {
         }
     }
 }
-
