@@ -11,7 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.SwingUtilities;
 
 /**
 * Creates the starting page of the application, where the user decides whether he wants to sign in or check in.
