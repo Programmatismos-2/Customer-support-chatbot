@@ -151,7 +151,7 @@ public class Chatbot extends JFrame {
     private void saveConversation() throws IOException, InterruptedException {
         String conv = getConversationAsString();
         if (conv.isEmpty() == false) {
-            SaveUsersHistory.SaveEmailAndQuestion(email, conv);
+            SaveUsersHistory.saveEmailAndQuestion(email, conv);
         }
         // You can also save the conversation to a file or perform other actions here
     }
