@@ -1,5 +1,4 @@
 package com.freddo;
-
 import java.io.IOException;
 /*
  * The main class that runs the program
