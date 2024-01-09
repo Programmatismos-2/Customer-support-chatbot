@@ -3,12 +3,10 @@ package com.freddo;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 /* 
  * RunBashCommand class for executing bash commands
  */
 public class RunBashCommand {
-
     // Method to obtain an OAuth2 access token using the gcloud command
     public static String aoth2() throws InterruptedException {
         try {
