@@ -1,5 +1,4 @@
 package com.freddo;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -9,8 +8,7 @@ import java.net.http.HttpRequest.BodyPublishers;
 /*
  * This class connects to vertex ai and gets the responce for our users question
  */
-public class Ai {
-    
+public class Ai {    
     // HttpClient instance for making HTTP requests
     static HttpClient client = HttpClient.newHttpClient();
 
