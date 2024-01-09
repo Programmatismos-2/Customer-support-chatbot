@@ -1,5 +1,4 @@
 package com.freddo;
-
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -11,12 +10,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
 /**
 * Creates the starting page of the application, where the user decides whether he wants to sign in or check in.
 */
 public class Home_Page extends JFrame {
-
     // ImageIcon for the home picture
     final static ImageIcon homePic = new ImageIcon("/path/to/image.jpg");
 
@@ -41,7 +38,6 @@ public class Home_Page extends JFrame {
         checkButton.setBounds(450, 265, 200, 50);
         signinButton.setBorder(BorderFactory.createEtchedBorder());
         checkButton.setBorder(BorderFactory.createEtchedBorder());
-
         signinButton.setOpaque(true);
         checkButton.setOpaque(true);
 
@@ -102,7 +98,6 @@ public class Home_Page extends JFrame {
         int buttonWidth = label.getWidth() / 4;
         int buttonHeight = label.getHeight() / 10;
         int buttonY = label.getHeight() * 5 / 9;
-
         signinButton.setBounds(label.getWidth() / 4 - buttonWidth / 2, buttonY, buttonWidth, buttonHeight);
         checkButton.setBounds(label.getWidth() * 3 / 4 - buttonWidth / 2, buttonY, buttonWidth, buttonHeight);
     }
