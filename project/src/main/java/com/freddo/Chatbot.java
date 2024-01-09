@@ -1,5 +1,4 @@
 package com.freddo;
-
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -13,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
 /**
 * Creates page for the user to check in using surname, name, flight number and email.
 */
@@ -74,9 +72,7 @@ public class Chatbot extends JFrame {
                 e1.printStackTrace();
             }
         });
-
         setLayout(new GridBagLayout());
-
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);  // Increased insets for padding
 
