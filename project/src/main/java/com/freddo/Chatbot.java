@@ -133,7 +133,7 @@ public class Chatbot extends JFrame {
         conversation.add("You: " + userMessage);
         updateChatArea();
 
-        // String answer = SaveUsersHistory.SaveEmailAndQuestion(fli, userMessage);
+        // String answer = SaveUsersHistory.saveEmailAndQuestion(fli, userMessage);
         String answer = Ai.hey(userMessage); // Use AI class to get answer from bot
         String botResponse = "Chatbot: " + answer;
         conversation.add(botResponse);
