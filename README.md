@@ -46,7 +46,7 @@ java -jar target/project-1.0-SNAPSHOT.jar
 # Make sure to 
 Change all the paths to the appropriate ones
 
-## Repository Structure
+# Repository Structure
 
 The repository has the following structure:  
 my-project  
@@ -59,4 +59,27 @@ my-project
 ├── pom.xml # Maven configuration file  
 ├── README.md # Project description file (Markdown)  
 └── LICENSE # License file  
+
+
+# Class Diagram
+
+```plantuml
+@startuml
+class Animal {
+  -name: String
+  +setName(name: String): void
+  +getName(): String
+}
+
+class Dog {
+  +bark(): void
+}
+
+class Cat {
+  +meow(): void
+}
+
+Animal <|-- Dog
+Animal <|-- Cat
+@enduml
 
