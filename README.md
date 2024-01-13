@@ -64,7 +64,7 @@ my-project
 
 ## Data Structures
 
-1. **Lists:** Used for storing and managing a sequence of elements.
+ **Lists:** Used for storing and managing a sequence of elements.
 ## Algorithms
 
-1. **Linear Search
+ **Linear Search
