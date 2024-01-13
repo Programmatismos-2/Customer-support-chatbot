@@ -13,6 +13,7 @@ public class RunBashCommand {
             String command = "gcloud auth print-access-token";
             
             // Create a ProcessBuilder for running the command
+            //if you are using windows switch the "bash" to "cmd.exe" and the "-c" to "/c"
             ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c", command);
            
             // Redirect error stream to output stream
