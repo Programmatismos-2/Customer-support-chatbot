@@ -46,3 +46,17 @@ java -jar target/project-1.0-SNAPSHOT.jar
 # Make sure to 
 Change all the paths to the appropriate ones
 
+## Repository Structure
+
+The repository has the following structure:
+my-project
+│
+├── src
+│ ├── main
+│ ├── java/com/freddo # Application code
+│ └── resources # Resource files
+│
+├── pom.xml # Maven configuration file
+├── README.md # Project description file (Markdown)
+└── LICENSE # License file
+
