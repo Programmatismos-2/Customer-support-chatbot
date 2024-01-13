@@ -61,25 +61,3 @@ my-project
 └── LICENSE # License file  
 
 
-# Class Diagram
-
-```plantuml
-@startuml
-class Animal {
-  -name: String
-  +setName(name: String): void
-  +getName(): String
-}
-
-class Dog {
-  +bark(): void
-}
-
-class Cat {
-  +meow(): void
-}
-
-Animal <|-- Dog
-Animal <|-- Cat
-@enduml
-
