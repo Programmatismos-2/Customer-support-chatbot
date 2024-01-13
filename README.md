@@ -60,4 +60,11 @@ my-project
 ├── README.md # Project description file (Markdown)  
 └── LICENSE # License file  
 
+# Data Structures and Algorithms  
 
+## Data Structures
+
+1. **Lists:** Used for storing and managing a sequence of elements.
+## Algorithms
+
+1. **Linear Search
