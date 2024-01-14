@@ -84,7 +84,7 @@ public class CheckInPage {
                     String output = CustomerChecker.checkCustomerExistence(surname, flightNumber);
                     if (output.equals("false")) {
                         // Save user credentials to CSV
-                        SaveUsersCredentials.SaveStringToCSV(name, surname, flightNumber, email);
+                        SaveUsersCredentials.SaveStringToCSV(email, name, surname, flightNumber);
                     } else {
                         // Show message if the user is already checked in
                         JOptionPane.showMessageDialog(checkFrame, "You have already checked in.", "Already checked in.", JOptionPane.INFORMATION_MESSAGE);
