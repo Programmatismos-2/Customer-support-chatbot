@@ -8,7 +8,7 @@ import java.io.IOException;
 public class SaveUsersCredentials {
     // Method to save user credentials to a CSV file
     public static void SaveStringToCSV(String email, String firstname, String lastname, String flightnumber) {
-        String filePath = "path/to/output.csv"; // Path to the CSV file
+        String filePath = "path/to/output.csv"; //TODO change the path to the apropriate one 
         try {
             // Create a FileWriter to write to the CSV file (use 'true' to append data to an existing file)
             FileWriter fileWriter = new FileWriter(filePath, true);
