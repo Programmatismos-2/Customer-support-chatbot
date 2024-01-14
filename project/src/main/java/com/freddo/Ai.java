@@ -47,9 +47,9 @@ public class Ai {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         // Cut and extract the answer from the response
-        String h = CutAnswer.cut(response.body());
+        String aiResponse = CutAnswer.cut(response.body());
 
         // Return the extracted answer
-        return h;
+        return aiResponse;
     }    
 }
