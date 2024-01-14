@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 */
 public class Home_Page extends JFrame {
     // ImageIcon for the home picture
-    final static ImageIcon homePic = new ImageIcon("/path/to/image.jpg");
+    final static ImageIcon homePic = new ImageIcon("/path/to/image.jpg"); //TODO change the path to the apropriate one 
 
     // Declare signinButton and checkButton as instance variables
     private JButton signinButton;
