@@ -21,7 +21,8 @@ public class SignInPage {
         JFrame signinFrame = new JFrame("Sign In - Σύνδεση");
         signinFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         signinFrame.setSize(600, 400);
-        signinFrame.setMinimumSize(new Dimension(400, 400)); // Set minimum size
+        // Set minimum size
+        signinFrame.setMinimumSize(new Dimension(400, 400));
         signinFrame.setVisible(true);
         signinFrame.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
