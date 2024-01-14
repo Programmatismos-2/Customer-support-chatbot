@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 public class SaveUsersHistory {
     public static void saveEmailAndQuestion(String email, String conv) throws IOException, InterruptedException {
-        String csvFilePath = "/path/to/users_QandA.csv";
+        String csvFilePath = "/path/to/users_QandA.csv"; //TODO change the path
         String textWithoutCommas = removeCommas(conv);
         saveDataToCSV(email, textWithoutCommas, csvFilePath);
     }
