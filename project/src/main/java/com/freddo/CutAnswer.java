@@ -6,7 +6,8 @@ import java.io.IOException;
 public class CutAnswer {
     public static String cut(String a) throws IOException, InterruptedException {
         try {
-            String cutAnswer = a.trim(); // Trim leading and trailing whitespace
+            // Trim leading and trailing whitespace
+            String cutAnswer = a.trim();
             // Split the input string based on a more flexible pattern
             String[] firstsplit = cutAnswer.split("content\": \"");
             // Check if the array has the expected index
