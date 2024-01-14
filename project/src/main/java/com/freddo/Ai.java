@@ -36,7 +36,8 @@ public class Ai {
 
         // Build the HTTP request to the AI model endpoint
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://europe-west9-aiplatform.googleapis.com/v1/projects/clever-bounty-404116/locations/europe-west9/publishers/google/models/text-bison:predict"))
+            //TODO enter your project ID
+            .uri(URI.create("https://europe-west9-aiplatform.googleapis.com/v1/projects/*PROJECT_ID*/locations/europe-west9/publishers/google/models/text-bison:predict"))
             .POST(BodyPublishers.ofString(requestBody))
             .header("Content-Type", "application/json")
             .header("Authorization", "Bearer " + RunBashCommand.aoth2())
