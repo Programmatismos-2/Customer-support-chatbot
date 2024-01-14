@@ -8,7 +8,8 @@ import java.io.IOException;
  */
 public class CustomerChecker {
     public static String checkCustomerExistence(String lastName, String flightNumber) {
-        String csvFilePath = "/path/to/output.csv"; //TODO change the path to the apropriate one 
+        //TODO change the path to the apropriate one
+        String csvFilePath = "/path/to/output.csv";
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
