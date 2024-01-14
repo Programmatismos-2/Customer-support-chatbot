@@ -27,6 +27,9 @@ This repository contains a customer support chatbot that utilizes Google Cloud s
      gcloud config set project <your-project-name>
      ```
      Replace `<your-project-name>` with the name of your Google Cloud project.
+# Make sure to 
+Change all the paths to the appropriate ones,they will be highlighted with the TODO command
+
 
 ## Running the program
 
@@ -43,8 +46,7 @@ mvn package
 ```sh
 java -jar target/project-1.0-SNAPSHOT.jar 
 ```
-# Make sure to 
-Change all the paths to the appropriate ones
+
 
 # Repository Structure
 
