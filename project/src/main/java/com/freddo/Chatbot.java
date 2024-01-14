@@ -29,7 +29,8 @@ public class Chatbot extends JFrame {
         this.names = names;
         this.email = email;
         setTitle("Chatbot App");
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // Set to DO_NOTHING_ON_CLOSE to handle window close event
+        // Set to DO_NOTHING_ON_CLOSE to handle window close event
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setSize(600, 400);
         setVisible(true);
         
