@@ -67,4 +67,4 @@ my-project
  **Lists:** Used for storing and managing a sequence of elements.
 ## Algorithms
 
- **Linear Search
+ **Linear Search**
