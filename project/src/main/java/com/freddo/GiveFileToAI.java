@@ -7,7 +7,8 @@ import java.io.IOException;
  */
 public class GiveFileToAI {
     public static String fileToVariable(String userquestion) throws IOException {
-        String filePath = "/path/to/testTermsandConditions.txt"; //TODO change the path to the apropriate one 
+        //TODO change the path to the apropriate one
+        String filePath = "/path/to/testTermsandConditions.txt";
 
         // Create a BufferedReader to read the file
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
