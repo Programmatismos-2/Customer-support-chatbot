@@ -78,8 +78,8 @@ public class Home_Page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int width = Home_Page.this.getWidth();
                 int height = Home_Page.this.getHeight();
-                SignInPage sign = new SignInPage(width, height);
-                sign.openSignInWindow();
+                SignInPage sign = new SignInPage();
+                sign.openSignInWindow(width, height);
                 Home_Page.this.dispose();
             }
         });
