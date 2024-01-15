@@ -24,11 +24,11 @@ import javax.swing.SwingUtilities;
 */
 public class SignInPage {
     // Method to open the sign-in window
-    public void openSignInWindow() {
+    public void openSignInWindow(int width, int height) {
         // Create the sign-in frame
         JFrame signinFrame = new JFrame("Sign In - Σύνδεση");
         signinFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        signinFrame.setSize(600, 400);
+        signinFrame.setSize(width, height);
         // Set minimum size
         signinFrame.setMinimumSize(new Dimension(400, 400));
         signinFrame.setVisible(true);
