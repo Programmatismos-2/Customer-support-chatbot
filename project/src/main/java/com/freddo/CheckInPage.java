@@ -24,11 +24,11 @@ import javax.swing.SwingUtilities;
 */
 public class CheckInPage {
     // Method to open the check-in window
-    public void openCheckWindow() {
+    public void openCheckWindow(int width, int height) {
         JFrame checkFrame = new JFrame("Check-In");
         checkFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         checkFrame.setSize(600, 400);
-        checkFrame.setMinimumSize(new Dimension(400, 400)); // Set minimum size
+        checkFrame.setMinimumSize(new Dimension(width, height)); // Set minimum size
         checkFrame.setVisible(true);
         checkFrame.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
