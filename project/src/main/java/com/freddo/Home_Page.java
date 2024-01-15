@@ -76,7 +76,9 @@ public class Home_Page extends JFrame {
         signinButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SignInPage sign = new SignInPage();
+                int width = Home_Page.this.getWidth();
+                int height = Home_Page.this.getHeight();
+                SignInPage sign = new SignInPage(width, height);
                 sign.openSignInWindow();
                 Home_Page.this.dispose();
             }
