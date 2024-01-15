@@ -82,8 +82,10 @@ public class SignInPage {
                     if (cont.equals("false")) {
                         int ans = JOptionPane.showConfirmDialog(null, "You are not checked in. Please do so.", "Sign In Problem", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
                         if (ans == 0 || ans == -1) {
+                            int width = signinFrame.getWidth();
+                            int height = signinFrame.getHeight();
                             CheckInPage chpage = new CheckInPage();
-                            chpage.openCheckWindow();
+                            chpage.openCheckWindow(width, height);
                         }
                     } else {
                         // Open the Chatbot window with user details
