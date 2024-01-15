@@ -92,7 +92,9 @@ public class SignInPage {
                         SwingUtilities.invokeLater(new Runnable() {
                             @Override
                             public void run() {
-                                new Chatbot(surname, flightNumber, cont).setVisible(true);
+                                int width = signinFrame.getWidth();
+                                int height = signinFrame.getHeight();
+                                new Chatbot(surname, flightNumber, cont, width, height).setVisible(true);
                             }
                         });
                     }
