@@ -76,9 +76,9 @@ public class Home_Page extends JFrame {
         signinButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Home_Page.this.dispose();
                 SignInPage sign = new SignInPage();
                 sign.openSignInWindow();
+                Home_Page.this.dispose();
             }
         });
 
@@ -86,9 +86,9 @@ public class Home_Page extends JFrame {
         checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Home_Page.this.dispose();
                 CheckInPage chpage = new CheckInPage();
                 chpage.openCheckWindow();
+                Home_Page.this.dispose();
             }
         });
 
