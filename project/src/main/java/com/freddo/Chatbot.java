@@ -32,14 +32,14 @@ public class Chatbot extends JFrame {
     String names;
 
     // Constructor for the Chatbot class that creates the chatbot frame with its components
-    public Chatbot(String names, String fli, String email) {
+    public Chatbot(String names, String fli, String email, int width, int height) {
         this.fli = fli; 
         this.names = names;
         this.email = email;
         setTitle("Chatbot App");
         // Set to DO_NOTHING_ON_CLOSE to handle window close event
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        setSize(600, 400);
+        setSize(width, height);
         setVisible(true);
         
         //Creation of components
