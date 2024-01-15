@@ -86,8 +86,10 @@ public class Home_Page extends JFrame {
         checkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                int width = Home_Page.this.getWidth();
+                int height = Home_Page.this.getHeight();
                 CheckInPage chpage = new CheckInPage();
-                chpage.openCheckWindow();
+                chpage.openCheckWindow(width, height);
                 Home_Page.this.dispose();
             }
         });
