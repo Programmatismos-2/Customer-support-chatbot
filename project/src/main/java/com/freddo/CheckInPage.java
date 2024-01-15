@@ -106,7 +106,9 @@ public class CheckInPage {
                     SwingUtilities.invokeLater(new Runnable() {
                         @Override
                         public void run() {
-                            new Chatbot(surname, flightNumber, output).setVisible(true);
+                            int width = checkFrame.getWidth();
+                            int height = checkFrame.getHeight();
+                            new Chatbot(surname, flightNumber, output, width, height).setVisible(true);
                         }
                     });
                 }
