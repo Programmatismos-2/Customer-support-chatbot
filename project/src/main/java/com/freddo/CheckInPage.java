@@ -27,8 +27,8 @@ public class CheckInPage {
     public void openCheckWindow(int width, int height) {
         JFrame checkFrame = new JFrame("Check-In");
         checkFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        checkFrame.setSize(600, 400);
-        checkFrame.setMinimumSize(new Dimension(width, height)); // Set minimum size
+        checkFrame.setSize(width, height);
+        checkFrame.setMinimumSize(new Dimension(600, 400)); // Set minimum size
         checkFrame.setVisible(true);
         checkFrame.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
